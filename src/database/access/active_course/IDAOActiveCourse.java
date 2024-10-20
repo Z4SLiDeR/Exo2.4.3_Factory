@@ -7,8 +7,9 @@ import school.User;
 import java.util.ArrayList;
 
 public interface IDAOActiveCourse {
-    boolean addActiveCourse(User user, Course course, int years);
-    boolean deleteActiveCourse(User user, Course course);
-    boolean updateActiveCourse(User user, Course course);
-    ArrayList<ActiveCourse> getAllActiveCourses();
+    ActiveCourse addActiveCourse(User user, Course course, int years);
+    boolean updateActiveCourse(ActiveCourse activeCourse);
+    boolean deleteActiveCourse(ActiveCourse activeCourse);
+    ActiveCourse getActiveCourseByUserIdAndCourseId(int userId, int courseId);
+    ArrayList<ActiveCourse> getActiveCourses();
 }

@@ -1,6 +1,6 @@
 package school;
 
-public class User {
+public class User implements ConfigurableName {
     private final int id;
     private String lastName;
     private String firstName;
@@ -22,10 +22,7 @@ public class User {
     }
 
     public void setLastName(String lastName) {
-        if (lastName == null || lastName.trim().isEmpty()) {
-            throw new IllegalArgumentException("Le nom ne peut pas être null ou vide.");
-        }
-        this.lastName = lastName;
+        this.lastName = validateName(lastName);
     }
 
     public String getFirstName() {
@@ -33,10 +30,7 @@ public class User {
     }
 
     public void setFirstName(String firstName) {
-        if (firstName == null || firstName.trim().isEmpty()) {
-            throw new IllegalArgumentException("Le nom ne peut pas être null ou vide.");
-        }
-        this.firstName = firstName;
+        this.firstName = validateName(firstName);
     }
 
     public Role getRole() {

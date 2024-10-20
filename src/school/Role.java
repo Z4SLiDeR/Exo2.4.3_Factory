@@ -3,7 +3,7 @@ package school;
 /**
  *  Role assigné (Etudiant/Professeur/...)
  */
-public class Role {
+public class Role implements ConfigurableName{
     private final int id;
     private String name;
 
@@ -21,6 +21,6 @@ public class Role {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = validateName(name);
     }
 }

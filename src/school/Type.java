@@ -1,7 +1,7 @@
 package school;
 
-//Type de cours
-public class Type {
+//Type de cours (section)
+public class Type implements ConfigurableName{
     private final int id;
     private String name;
 
@@ -16,5 +16,10 @@ public class Type {
 
     public String getName() {
         return name;
+    }
+
+
+    public void setName(String name) {
+        this.name = validateName(name);
     }
 }

@@ -1,12 +1,15 @@
 package database.access.course;
 
 import school.Course;
+import school.Type;
+
 import java.util.ArrayList;
 
 public interface IDAOCourse {
-    int getCoursesId(String nom);
-    boolean addCourses(String nom, int idSection);
-    boolean updateCourses(int id, String nom, int idSection);
-    boolean deleteCourses(int id);
+    Course getCourseById(int courseId);
+    Course addCourses(String name, Type section);
+    boolean updateCourses(Course course, String name, Type section);
+    boolean deleteCourses(Course course);
     ArrayList<Course> getCourses();
+    int getNextId();
 }

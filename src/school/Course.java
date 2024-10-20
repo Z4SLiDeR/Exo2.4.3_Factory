@@ -1,6 +1,6 @@
 package school;
 
-public class Course {
+public class Course implements ConfigurableName{
     private final int id;
     private Type type;
     private String name;
@@ -27,10 +27,8 @@ public class Course {
         return name;
     }
 
+
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            throw new IllegalArgumentException("Le nom ne peut pas être null ou vide.");
-        }
-        this.name = name;
+        this.name = validateName(name);
     }
 }

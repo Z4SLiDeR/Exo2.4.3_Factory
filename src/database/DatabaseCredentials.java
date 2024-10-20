@@ -10,12 +10,12 @@ public class DatabaseCredentials {
 
     public DatabaseCredentials() {
         this.user = "postgres";
-        this.password = "password";
+        this.password = "password"; //todo Changer password
         this.host = "127.0.0.1";
         this.port = "5432";
         this.dbName = "ue1396";
     }
-    
+
     public String getPassword() {
         return password;
     }
@@ -39,13 +39,6 @@ public class DatabaseCredentials {
     }
 
     public String toURI() {
-        return new StringBuilder()
-                .append("jdbc:postgresql://")
-                .append(host)
-                .append(":")
-                .append(port)
-                .append("/")
-                .append(dbName)
-                .toString();
+        return toRawURI() + dbName;
     }
 }
